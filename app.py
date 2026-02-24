@@ -3,8 +3,8 @@ from dash import Dash, dcc, html, Input, Output
 import plotly.express as px
 
 # ===== LEITURA DOS EXCEL =====
-df_head = pd.read_excel("https://api.onedrive.com/v1.0/shares/u!aHR0cHM6Ly8xZHJ2Lm1zL3gvYy8zNTY0YmJiYmQzZDA2Mjc2L0lRQndoTm1jYUJmaVJhRnNYTFRUYlpSaEFZVFRoNWdfX2YxZzVYc01OYnNHelM0/root/content")
-df_rs = pd.read_excel("https://api.onedrive.com/v1.0/shares/u!aHR0cHM6Ly8xZHJ2Lm1zL3gvYy8zNTY0YmJiYmQzZDA2Mjc2L0lRRC1DbGl4eGN3WlNJdmhZMjN2QzNhLUFVY3ozMjdnOUpDcEIxUVNLSkFXZ2hhdw/root/content")
+df_head = pd.read_csv("https://docs.google.com/spreadsheets/d/1E9ja83RZseiOC8iGlgsEZ4wk--KD6dFm0OM1bociUB4/export?format=csv")
+df_rs = pd.read_csv("https://docs.google.com/spreadsheets/d/1xlQ1cMTsIjEP-QZAQvOdgkZHGSfvKh7zIn7rTsYnu5o/export?format=csv")
 
 df_head.columns = df_head.columns.str.strip()
 df_rs.columns = df_rs.columns.str.strip()
