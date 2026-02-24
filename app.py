@@ -16,6 +16,7 @@ df_rs["Etapa"] = df_rs["Etapa"].astype(str).str.strip()
 
 # ===== APP =====
 app = Dash(__name__)
+server = app.server
 
 # ===== LAYOUT =====
 app.layout = html.Div(
