@@ -3,8 +3,8 @@ from dash import Dash, dcc, html, Input, Output
 import plotly.express as px
 
 # ===== LEITURA DOS EXCEL =====
-df_head = pd.read_excel("Planilha Head Count.xlsx")
-df_rs = pd.read_excel("Planilha RS.xlsx")
+df_head = pd.read_excel("https://api.onedrive.com/v1.0/shares/u!aHR0cHM6Ly8xZHJ2Lm1zL3gvYy8zNTY0YmJiYmQzZDA2Mjc2L0lRQndoTm1jYUJmaVJhRnNYTFRUYlpSaEFZVFRoNWdfX2YxZzVYc01OYnNHelM0/root/content")
+df_rs = pd.read_excel("https://api.onedrive.com/v1.0/shares/u!aHR0cHM6Ly8xZHJ2Lm1zL3gvYy8zNTY0YmJiYmQzZDA2Mjc2L0lRRC1DbGl4eGN3WlNJdmhZMjN2QzNhLUFVY3ozMjdnOUpDcEIxUVNLSkFXZ2hhdw/root/content")
 
 df_head.columns = df_head.columns.str.strip()
 df_rs.columns = df_rs.columns.str.strip()
@@ -253,4 +253,8 @@ def atualizar(empresa, departamento, area, secao, cargo, funcao):
     )
 
 # ===== RUN =====
-app.run(debug=True)
+import os
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8050))
+    app.run(host="0.0.0.0", port=port)
